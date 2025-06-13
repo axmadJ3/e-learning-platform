@@ -1,0 +1,10 @@
+[project]
+name = "e-learn-platform"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django~=5.0.4",
+    "pillow==10.3.0",
+]
