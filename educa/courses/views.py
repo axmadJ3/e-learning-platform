@@ -1,9 +1,10 @@
 from django.apps import apps
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404, redirect
-from django.views.generic import ListView
 from django.forms.models import modelform_factory
+from django.views.generic import ListView
 from django.views.generic.base import TemplateResponseMixin, View
+from braces.views import CsrfExemptMixin, JsonRequestResponseMixin
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
@@ -173,3 +174,21 @@ class ModuleContentListView(TemplateResponseMixin, View):
                 'module': module
             }
         )
+
+
+class ModuleOrderView(CsrfExemptMixin, JsonRequestResponseMixin, View):
+    def post(self, request):
+        for id, order in self.request_json.items():
+            Module.objects.filter(
+                id=id, owner=request.user
+            ).update(order=order)
+        return self.render_json_response({'saved': 'OK'})
+
+
+class ContentOrderView(CsrfExemptMixin, JsonRequestResponseMixin, View):
+    def post(self, request):
+        for id, order in self.request_json.items():
+            Content.objects.filter(
+                id=id, module__course__owner=request.user
+            ).update(order=order)
+        return self.render_json_response({'saved': 'OK'})

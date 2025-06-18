@@ -26,17 +26,31 @@ wheels = [
 ]
 
 [[package]]
+name = "django-braces"
+version = "1.15.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/13/1e/a9b406cf25fafbdc5f0e494d31e3ac13459118f6478b4db7f40a502de407/django-braces-1.15.0.tar.gz", hash = "sha256:f451d08ffc1078d81209a2e17f2219bce20196928853c82405451b18a46875e0", size = 48132 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ea/06/e225af47bf6ef997a08b892afef4606ed6238768897e4bd32d33eafe46dc/django_braces-1.15.0-py2.py3-none-any.whl", hash = "sha256:28f00b0f98368c9a37f30cce6087fc57127f0a24c5b8b449f9e1245bded6405d", size = 14729 },
+]
+
+[[package]]
 name = "e-learn-platform"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "django" },
+    { name = "django-braces" },
     { name = "pillow" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "django", specifier = "~=5.0.4" },
+    { name = "django-braces", specifier = "==1.15.0" },
     { name = "pillow", specifier = "==10.3.0" },
 ]
 

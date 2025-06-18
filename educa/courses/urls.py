@@ -30,6 +30,11 @@ urlpatterns = [
         name='course_module_update'
     ),
     path(
+        'module/order/',
+        views.ModuleOrderView.as_view(),
+        name='module_order'
+    ),
+    path(
         'module/<int:module_id>/',
         views.ModuleContentListView.as_view(),
         name='module_content_list'
@@ -43,6 +48,11 @@ urlpatterns = [
         'module/<int:module_id>/content/<model_name>/<id>/',
         views.ContentCreateUpdateView.as_view(),
         name='module_content_update'
+    ),
+    path(
+        'content/order/',
+        views.ContentOrderView.as_view(),
+        name='content_order'
     ),
     path(
         'content/<int:id>/delete/',
