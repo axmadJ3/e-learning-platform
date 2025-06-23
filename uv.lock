@@ -12,6 +12,15 @@ wheels = [
 ]
 
 [[package]]
+name = "attrs"
+version = "25.3.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz", hash = "sha256:75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b", size = 812032 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/77/06/bb80f5f86020c4551da315d78b3ab75e8228f89f0162f2c3a819e407941a/attrs-25.3.0-py3-none-any.whl", hash = "sha256:427318ce031701fea540783410126f03899a97ffc6f61596ad581ac2e40e3bc3", size = 63815 },
+]
+
+[[package]]
 name = "certifi"
 version = "2025.6.15"
 source = { registry = "https://pypi.org/simple" }
@@ -108,6 +117,20 @@ wheels = [
 ]
 
 [[package]]
+name = "django-redisboard"
+version = "8.4.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "attrs" },
+    { name = "django" },
+    { name = "redis" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ee/68/c0faaebaf49da125fa807fce1bacf38ef301073c9e5a19c5624a02894128/django-redisboard-8.4.0.tar.gz", hash = "sha256:226f745995d34abd0e9893781581b86941b17e47555083fa2c7683c15ff78beb", size = 786604 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b4/41/99a5919c5eef8d30bb43beac6f921e92dcf8ac379302de8a46e863c0f0bc/django_redisboard-8.4.0-py3-none-any.whl", hash = "sha256:a68efbba5a66e34e17c48de0f3f94eba6496ddca8fa5b594796359e6ee56ae15", size = 56954 },
+]
+
+[[package]]
 name = "e-learn-platform"
 version = "0.1.0"
 source = { virtual = "." }
@@ -116,8 +139,10 @@ dependencies = [
     { name = "django-braces" },
     { name = "django-debug-toolbar" },
     { name = "django-embed-video" },
+    { name = "django-redisboard" },
     { name = "pillow" },
     { name = "pymemcache" },
+    { name = "redis" },
 ]
 
 [package.metadata]
@@ -126,8 +151,10 @@ requires-dist = [
     { name = "django-braces", specifier = "==1.15.0" },
     { name = "django-debug-toolbar", specifier = "==4.3.0" },
     { name = "django-embed-video", specifier = "==1.4.9" },
+    { name = "django-redisboard", specifier = "==8.4.0" },
     { name = "pillow", specifier = "==10.3.0" },
     { name = "pymemcache", specifier = "==4.0.0" },
+    { name = "redis", specifier = "==5.0.4" },
 ]
 
 [[package]]
@@ -165,6 +192,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/d9/b6/4541b664aeaad025dfb8e851dcddf8e25ab22607e674dd2b562ea3e3586f/pymemcache-4.0.0.tar.gz", hash = "sha256:27bf9bd1bbc1e20f83633208620d56de50f14185055e49504f4f5e94e94aff94", size = 70176 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/41/ba/2f7b22d8135b51c4fefb041461f8431e1908778e6539ff5af6eeaaee367a/pymemcache-4.0.0-py2.py3-none-any.whl", hash = "sha256:f507bc20e0dc8d562f8df9d872107a278df049fa496805c1431b926f3ddd0eab", size = 60772 },
+]
+
+[[package]]
+name = "redis"
+version = "5.0.4"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/cd/9c/1d57b0f61402aabdd9c3b2882e3fddd86a269c1df2cfd2e77daa607ef047/redis-5.0.4.tar.gz", hash = "sha256:ec31f2ed9675cc54c21ba854cfe0462e6faf1d83c8ce5944709db8a4700b9c61", size = 4581983 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/65/f2/540ad07910732733138beb192991c67c69e7f6ebf549ce1a3a77846cbae7/redis-5.0.4-py3-none-any.whl", hash = "sha256:7adc2835c7a9b5033b7ad8f8918d09b7344188228809c98df07af226d39dec91", size = 251954 },
 ]
 
 [[package]]

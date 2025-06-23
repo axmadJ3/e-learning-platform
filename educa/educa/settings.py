@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # third party
     'embed_video',
     'debug_toolbar',
+    'redisboard',
         
     # local
     'courses.apps.CoursesConfig',
@@ -85,8 +86,8 @@ DATABASES = {
 
 CACHE = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
-        'LOCATION': '127.0.0.1:11211',
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379',
     }
 }
 
