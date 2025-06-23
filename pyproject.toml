@@ -11,6 +11,7 @@ dependencies = [
     "django-embed-video==1.4.9",
     "django-redisboard==8.4.0",
     "pillow==10.3.0",
+    "psycopg[binary]>=3.2.9",
     "pymemcache==4.0.0",
     "redis==5.0.4",
 ]
