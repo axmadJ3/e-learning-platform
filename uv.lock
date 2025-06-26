@@ -131,6 +131,18 @@ wheels = [
 ]
 
 [[package]]
+name = "djangorestframework"
+version = "3.15.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ec/60/cc2dd985400293fe7bf3fa1b9a5d61f5b44200c33f7d31952f2c9fd79e8a/djangorestframework-3.15.1.tar.gz", hash = "sha256:f88fad74183dfc7144b2756d0d2ac716ea5b4c7c9840995ac3bfd8ec034333c1", size = 1066194 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c0/7e/8c45ea7f85dd5d52ceddbacc6f56ecaca21ecbfc0e8c34c95618a14d5082/djangorestframework-3.15.1-py3-none-any.whl", hash = "sha256:3ccc0475bce968608cf30d07fb17d8e52d1d7fc8bfe779c905463200750cbca6", size = 1067096 },
+]
+
+[[package]]
 name = "e-learn-platform"
 version = "0.1.0"
 source = { virtual = "." }
@@ -140,6 +152,7 @@ dependencies = [
     { name = "django-debug-toolbar" },
     { name = "django-embed-video" },
     { name = "django-redisboard" },
+    { name = "djangorestframework" },
     { name = "pillow" },
     { name = "psycopg", extra = ["binary"] },
     { name = "pymemcache" },
@@ -153,6 +166,7 @@ requires-dist = [
     { name = "django-debug-toolbar", specifier = "==4.3.0" },
     { name = "django-embed-video", specifier = "==1.4.9" },
     { name = "django-redisboard", specifier = "==8.4.0" },
+    { name = "djangorestframework", specifier = "==3.15.1" },
     { name = "pillow", specifier = "==10.3.0" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3.2.9" },
     { name = "pymemcache", specifier = "==4.0.0" },
