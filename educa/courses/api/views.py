@@ -6,8 +6,13 @@ from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 
 from courses.models import Subject, Course
+from courses.api.permissions import IsEnroll
 from courses.api.pagination import StandartPagination
-from courses.api.serializers import SubjectSerializer, CourseSerializer
+from courses.api.serializers import (
+    SubjectSerializer, 
+    CourseSerializer, 
+    CourseWithContentsSerializer
+)
 
 
 class SubjectViewSet(viewsets.ReadOnlyModelViewSet):
@@ -31,3 +36,13 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
         course = self.get_object()
         course.students.add(request.user)
         return Response({'enrolled': True})
+
+    @action(
+        detail=True,
+        methods=['get'],
+        serializer_class=CourseWithContentsSerializer,
+        permission_classes=[IsAuthenticated, IsEnroll],
+        authentication_classes=[BasicAuthentication],
+    )
+    def content(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
