@@ -15,4 +15,5 @@ dependencies = [
     "psycopg[binary]>=3.2.9",
     "pymemcache==4.0.0",
     "redis==5.0.4",
+    "requests==2.31.0",
 ]
