@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from django.db.models import Count
 
-from courses.models import Subject
+from courses.models import Subject, Course, Module
 
 
 class SubjectSerializer(serializers.ModelSerializer):
@@ -19,4 +19,26 @@ class SubjectSerializer(serializers.ModelSerializer):
         ).order_by('total_students')[0:3]
         return [
             f'{c.title} ({c.total_students})' for c in courses
+        ]
+
+
+class ModuleSerializer(serializers.ModelSerializer):
+    model =  Module
+    fields = ['order', 'title', 'description']
+
+
+class CourseSerializer(serializers.ModelSerializer):
+    modules = ModuleSerializer(many=True, read_only=True)    
+
+    class Meta:
+        model = Course
+        fields = [
+            'id',
+            'subject',
+            'title',
+            'slug',
+            'overview',
+            'created',
+            'owner',
+            'modules'
         ]
