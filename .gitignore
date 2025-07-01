@@ -13,3 +13,7 @@ data
 *.pid
 *.sock
 *.log
+ssl/
+
+# static files
+staticfiles/
