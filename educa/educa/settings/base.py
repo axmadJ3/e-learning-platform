@@ -155,3 +155,5 @@ LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
 CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 60 * 15 # 15 minutes
 CACHE_MIDDLEWARE_KEY_PREFIX = 'educa'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
